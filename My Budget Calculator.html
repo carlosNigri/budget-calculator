@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" /> 
+<link rel="stylesheet" href="style.css" />
+<script src='myScript.js' type="text/javascript"></script>
+</head>
+<body>
+<div class="section">
+	<h1 style="margin-bottom: 0px">My First jQuery Budget Calculator</h1>
+	<div id=displayEndingBalance class="section">
+
+	<p id="endingBalance">$ </p>
+
+	</div>
+	
+	<script>$("#displayEndingBalance").hide();</script>
+
+<p class="border" id=divBorder1></p>
+	
+<div id=initialFunds class="section">
+
+<p>Please enter your current account balance.</p>
+
+<p>$ <input id="inputFunds" type="text" ></p>
+
+<button id=initFundsButton >Next -></button>
+</div>
+
+<p class="border" id=divBorder2></p>
+
+<div id=currDebts class="section">
+
+<p>Please enter any debts owed that have not been deducted from your current account balance.</p>
+
+<p>$ <input id="inputDebts" type="text" ></p>
+
+<button id=backDebtsButton ><- Back</button>
+<button id=nextDebtsButton >Next -></button>
+</div>
+<script>$("#currDebts").hide();</script>
+
+<p class="border" id=divBorder3></p>
+
+<div id=monthlySpending class="section">
+
+<p>Please enter the maximum you expect to spend per month on each of the following categories.</p>
+<table>
+	<tr>
+		<td>Rent:</td>
+		<td>$ <input id="inputRent" type="text" ></td>
+	</tr>
+	<tr>
+		<td>Electric:</td>
+		<td>$ <input id="inputElectric" type="text" ></td>
+	</tr>
+	<tr>
+		<td>Water:</td>
+		<td>$ <input id="inputWater" type="text" ></td>
+	</tr>
+	<tr>
+		<td>Property Taxes:</td>
+		<td>$ <input id="inputPropTax" type="text" ></td>
+	</tr>
+	<tr>
+		<td>Home Insurance:</td>
+		<td>$ <input id="inputHomeInsur" type="text" ></td>
+	</tr>
+	<tr>
+		<td>Home Repair:</td>
+		<td>$ <input id="inputHomeRepair" type="text" ></td>
+	</tr>
+	<tr>
+		<td>Car Payment:</td>
+		<td>$ <input id="inputCarPmt" type="text" ></td>
+	</tr>
+	<tr>
+		<td>Car Insurance:</td>
+		<td>$ <input id="inputCarInsur" type="text" ></td>
+	</tr>
+	<tr>
+		<td>Car Repair:</td>
+		<td>$ <input id="inputCarRepair" type="text" ></td>
+	</tr>
+	<tr>
+		<td>Health Insurance:</td>
+		<td>$ <input id="inputHealthInsur" type="text" ></td>
+	</tr>
+	<tr>
+		<td>Gasoline:</td>
+		<td>$ <input id="inputGas" type="text" ></td>
+	</tr>
+		<tr>
+		<td>Groceries:</td>
+		<td>$ <input id="inputGrocery" type="text" ></td>
+	</tr>
+	<tr>
+		<td>Cable:</td>
+		<td>$ <input id="inputCable" type="text" ></td>
+	</tr>
+	<tr>
+		<td>Internet:</td>
+		<td>$ <input id="inputInternet" type="text" ></td>
+	</tr>
+	<tr>
+		<td>Phone:</td>
+		<td>$ <input id="inputPhone" type="text" ></td>
+	</tr>
+		<tr>
+		<td>Education:</td>
+		<td>$ <input id="inputEducation" type="text" ></td>
+	</tr>
+	<tr>
+		<td>Veterinary:</td>
+		<td>$ <input id="inputVet" type="text" ></td>
+	</tr>
+	<tr>
+		<td>Entertainment:</td>
+		<td>$ <input id="inputEntertain" type="text" ></td>
+	</tr>
+	<tr>
+		<td>Restaurants:</td>
+		<td>$ <input id="inputRestaurant" type="text" ></td>
+	</tr>
+	<tr>
+		<td>Other Expenses:</td>
+		<td>$ <input id="inputMisc" type="text" ></td>
+	</tr>
+</table>
+
+<button id=backSpendButton ><- Back</button>
+<button id=nextSpendButton >Next -></button>
+</div>
+<script>$("#monthlySpending").hide();</script>
+
+<p class="border" id=divBorder4></p>
+
+<div id=monthlyIncome class="section">
+
+<p>Please enter your total expected monthly income.</p>
+
+<p>$ <input id="inputIncome" type="text" ></p>
+
+<button id=backIncomeButton ><- Back</button>
+<button id=nextIncomeButton >Next -></button>
+</div>
+<script>$("#monthlyIncome").hide();</script>
+
+<p class="border" id=divBorder5></p>
+
+<div id=timeFrame class="section">
+
+<p>Please use the calendars below to choose a starting and ending date.</p>
+<p>Note: Your ending balance will be calculated using the starting and ending month and years below.</p>
+
+<table>
+
+	<tr>
+		<td>Start at the beginning of: </td>
+		<td><select name="startMonth" id="startMonth" style="margin-left: 10px">
+			<option value="0">January</option>
+			<option value="1">February</option>
+			<option value="2">March</option>
+			<option value="3">April</option>
+			<option value="4">May</option>
+			<option value="5">June</option>
+			<option value="6">July</option>
+			<option value="7">August</option>
+			<option value="8">September</option>
+			<option value="9">October</option>
+			<option value="10">November</option>
+			<option value="11">December</option>
+		</select></td>
+		<td><select name="startYear" id="startYear" style="margin-left: 10px">
+			<option value="2013">2013</option>
+			<option value="2014">2014</option>
+			<option value="2015">2015</option>
+			<option value="2016">2016</option>
+			<option value="2017">2017</option>
+			<option value="2018">2018</option>
+			<option value="2019">2019</option>
+			<option value="2020">2020</option>
+		</select></td>
+	</tr>
+	<tr>
+		<td>End at the end of:</td>
+		<td><select name="endMonth" id="endMonth">
+			<option value="0">January</option>
+			<option value="1">February</option>
+			<option value="2">March</option>
+			<option value="3">April</option>
+			<option value="4">May</option>
+			<option value="5">June</option>
+			<option value="6">July</option>
+			<option value="7">August</option>
+			<option value="8">September</option>
+			<option value="9">October</option>
+			<option value="10">November</option>
+			<option value="11">December</option>
+		</select></td>
+		<td><select name="endYear" id="endYear">
+			<option value="2013">2013</option>
+			<option value="2014">2014</option>
+			<option value="2015">2015</option>
+			<option value="2016">2016</option>
+			<option value="2017">2017</option>
+			<option value="2018">2018</option>
+			<option value="2019">2019</option>
+			<option value="2020">2020</option>
+		</select></td>
+	</tr>
+</table>
+
+<button id=backDateButton ><- Back</button>
+<button id=nextDateButton >Next -></button>
+</div>
+
+<script>$("#timeFrame").hide();</script>
+
+	<button id=recalculateButton >Recalculate</button>
+	<button id=startOverButton >Start Over</button>
+	<script>
+		$("#startOverButton").hide();
+		$("#recalculateButton").hide();
+		$("#divBorder1").hide();
+		$("#divBorder2").hide();
+		$("#divBorder3").hide();
+		$("#divBorder4").hide();
+		$("#divBorder5").hide();
+		$(':input').not(':button, :submit, :reset').removeAttr('checked').removeAttr('selected').not(':checkbox, :radio, select').val('');
+	</script>
+</div>
+
+<div id="dialog" title="Start Over">
+	<p>All progress will be lost. Are you sure you want to start over?</p>
+</div>
+
+</body>
+</html> 

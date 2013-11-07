@@ -1,0 +1,62 @@
+body{
+	background-color : #FFDEAD;
+	text-align : center;
+	color: blue;
+	font-size : 15pt;
+}
+button{
+	background-color: #6495ED;
+	border-radius : 5px;
+}
+.rightYear{
+	position:relative;
+	right:26px;
+}
+.rightMonth{
+	position:relative;
+	right:40px;
+}
+
+p.border{
+	border-style:solid;
+	border-width:medium;
+	border-color:#FFDEAD;
+}
+
+h1{
+	font-size : 22pt;
+}
+input{
+	border-radius : 5px;
+}
+div.section{
+	padding: 10px;
+	width : auto;
+	height: auto;
+	max-width: 500px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top: auto;
+	margin-bottom: auto;
+	background-color : white;
+	border-radius : 5px;
+}
+td{
+	text-align: left;
+	padding: 5px;
+}
+table{
+	margin-left:auto;
+	margin-right:auto;
+	margin-top: auto;
+	margin-bottom: auto;
+	padding-bottom: 15px;
+}
+#endYear{
+
+	margin-left: 10px;
+}
+#endMonth{
+
+	margin-left: 10px;
+}
