@@ -100,18 +100,14 @@ $(document).ready(function () {
         var months = 0;
         if (parseInt($("#startYear").val()) < parseInt($("#endYear").val())) {
             months += 12 - parseInt($("#startMonth").val());
-            //alert("The months is " + months);
             months += (parseInt($("#endYear").val()) - (parseInt($("#startYear").val()) + 1)) * 12;
             months += parseInt($("#endMonth").val()) + 1;
         }
         else if (parseInt($("#startYear").val()) == parseInt($("#endYear").val())) {
             months = parseInt($("#endMonth").val()) + 1 - parseInt($("#startMonth").val());
         }
-        //alert("The months is " + months);
         var gainLossPerMonth = income - totExpense;
-        //alert("The gainLossPerMonth is " + gainLossPerMonth);
         endingBalance = funds - debts + (gainLossPerMonth * months);
-        //alert("The endingBalance is " + endingBalance);
         $("#endingBalance").text("Your end balance from " + monthString[parseInt($("#startMonth").val())] + " " + $("#startYear").val() + " to " + monthString[parseInt($("#endMonth").val())] + " " + $("#endYear").val() + " will be $" + endingBalance + ".");
     }
 
@@ -121,9 +117,6 @@ $(document).ready(function () {
             $("#initialFunds").hide();
             $("#currDebts").show();
         }
-        //$("#change_me").text("I have been changed!");
-        //$("#change_me").css("background-color","red");
-
     });
 
     $("#backDebtsButton").click(function () {
@@ -147,11 +140,9 @@ $(document).ready(function () {
 
     $("#nextSpendButton").click(function () {
         totExpense = 0;
-        //alert("The totExpense is " + totExpense);
         for (var i = 0; i < 20; i++) {
             totExpense += checkIfSpendMonetary(expenses[i]);
         }
-        //alert("The totExpense is " + totExpense);
         $("#monthlySpending").hide();
         $("#monthlyIncome").show();
     });
@@ -275,10 +266,8 @@ $(document).ready(function () {
         }
         else {
             debts = checkIfMonetary("#inputDebts");
-            //alert("The debts is " + debts);
             funds = checkIfMonetary("#inputFunds");
             income = checkIfMonetary("#inputIncome");
-            //alert("The debts is " + debts);
             totExpense = 0;
             for (var i = 0; i < 20; i++) {
                 totExpense += checkIfSpendMonetary(expenses[i]);
